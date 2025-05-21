@@ -1,109 +1,106 @@
-TCGA-BRCA Transcriptomics Expression Analysis
 
-This project analyzes gene expression patterns in breast cancer subtypes using data from the TCGA-BRCA cohort (PanCancer Atlas). It identifies differentially expressed genes (DEGs), performs pathway enrichment, and visualizes subtype distinctions using PCA and volcano plots.
+# TCGA-BRCA Transcriptomics Expression Analysis
 
-Getting Started
+This project analyzes gene expression patterns in breast cancer subtypes using data from the **TCGA-BRCA cohort (PanCancer Atlas)**. It identifies **differentially expressed genes (DEGs)**, performs **pathway enrichment**, and visualizes subtype distinctions using **PCA** and **volcano plots**.
+
+---
+
+## Getting Started
+
 These instructions will help you get a local copy of the project up and running for development, exploration, or portfolio showcasing.
 
-See Deployment if you want to run this on a live notebook platform or build it into an interactive web app.
+See **Deployment** if you want to run this on a live notebook platform or build it into an interactive web app.
 
-Prerequisites
+---
+
+## Prerequisites
+
 You'll need:
 
-Python 3.8+
+- Python 3.8+
+- Jupyter Notebook or JupyterLab
+- `pip` or `conda` for dependency management
+- Basic knowledge of Pandas, Seaborn, and gene expression data
 
-Jupyter Notebook or JupyterLab
+### Required Python packages:
 
-pip or conda for dependency management
-
-Basic knowledge of Pandas, Seaborn, and gene expression data
-
-Required Python packages:
-bash
-Copy
-Edit
+```bash
 pip install pandas numpy seaborn matplotlib scikit-learn gseapy statsmodels
+```
 
-Installing
-Step 1 — Clone the Repository
-bash
-Copy
-Edit
-git clone https://github.com/your-username/tcga-brca-expression-analysis.git
+## Installing
+
+### Step 1 — Clone the Repository
+
+```bash
+git clone https://github.com/your-username/TCGA-BRCA-Transcriptomics-Expression-Analysis.git
 cd tcga-brca-expression-analysis
-Step 2 — Prepare the Data
-Place the following files in the /data/ directory:
+```
+### Step 2 — Prepare the Data
 
-brca_tcga_pan_can_atlas_2018_clinical_data.tsv (included)
+Place the following files in the `/data/` directory:
 
-data_mrna_seq_v2_rsem.txt (download manually from cBioPortal)
+- `brca_tcga_pan_can_atlas_2018_clinical_data.tsv` (included)
+- `data_mrna_seq_v2_rsem.txt` (download manually from [cBioPortal](https://www.cbioportal.org/))
 
-See data/README.md for download links and instructions.
+> 📁 See `data/README.md` for download links and instructions.
 
-Step 3 — Launch the Notebook
-bash
-Copy
-Edit
+### Step 3 — Launch the Notebook
+
+Make sure you're in the project root directory, then run:
+
+```bash
 jupyter notebook notebook.ipynb
-Step 4 — Run a Subtype Comparison
-In the notebook, choose two breast cancer subtypes to compare. The code will:
+```
 
-Generate a volcano plot
+### Step 4 — Run a Subtype Comparison
 
-Identify top DEGs
+Inside the notebook, follow these steps:
 
-Perform KEGG and GO enrichment
+- Select two breast cancer subtypes to compare  
+- The analysis will automatically:
+  - Generate a volcano plot  
+  - Identify top differentially expressed genes (DEGs)  
+  - Perform KEGG and GO enrichment analysis  
+  - Save all outputs to the `/results/` directory
 
-Save results under /results/
+## Running the Tests
 
-Running the Tests
-This is a notebook-based project. All outputs are visually validated and manually reviewed. You can reproduce:
+This is a notebook-based project. All outputs are visually validated and manually reviewed. You can reproduce and verify results through the following checks:
 
-End-to-End Analysis
-Choose subtype A vs B
+### End-to-End Analysis
 
-Check PCA separation
+- Choose subtype A vs B  
+- Check PCA separation  
+- Confirm that the volcano plot and enrichment results are biologically meaningful
 
-Confirm volcano plot and enrichment results are meaningful
+### Functional Unit Checks
 
-Functional Unit Checks
-PCA separates known subtypes
+- PCA effectively separates known breast cancer subtypes  
+- Wilcoxon test and FDR correction correctly identify expected DEGs  
+- Enrichr enrichment results align with known cancer pathways (e.g., p53 signaling, cell cycle)
 
-Wilcoxon and FDR identify expected DEGs
+## Deployment
 
-Enrichr pathways align with known cancer biology (e.g., p53, cell cycle)
+You can convert this notebook into a **Streamlit** app for interactive use (e.g., dropdowns, plots, enrichment on demand).
 
-Deployment
-You can convert this notebook into a Streamlit app for interactive use (dropdowns, plots, enrichment on demand).
+### To deploy as a web app:
 
-To deploy as a web app:
+1. Convert the notebook to a `.py` script  
+2. Wrap the necessary inputs and outputs using **Streamlit** or **Voila**  
+3. Host the app using one of the following platforms:
+   - [Streamlit Cloud](https://streamlit.io/cloud)
+   - [Heroku](https://www.heroku.com/)
+   - [Binder](https://mybinder.org/)
 
-Convert the notebook to .py script
+## Built With
 
-Wrap inputs/outputs with Streamlit or Voila
+- **Pandas** – for data manipulation and processing  
+- **Seaborn** and **Matplotlib** – for data visualization and plotting  
+- **GSEAPY** – for gene set enrichment analysis using the Enrichr API  
+- **Scikit-learn** – for PCA and preprocessing tasks  
+- **Statsmodels** – for statistical tests and FDR correction
 
-Host using Streamlit Cloud, Heroku, or Binder
+## Contributors
 
-Built With
-Pandas – data handling
-
-Seaborn, Matplotlib – plotting
-
-GSEAPY – gene set enrichment (Enrichr client)
-
-Scikit-learn – PCA and preprocessing
-
-Statsmodels – FDR correction
-
-Contributing
-Want to extend this with survival analysis, more subtypes, or ML models? Feel free to fork and submit a PR.
-
-Please read CONTRIBUTING.md for guidelines.
-
-Versioning
-This project uses Semantic Versioning for releases.
-
-See GitHub tags for available versions.
-
-Authors
-Jigyasa Saini – Full pipeline design, notebook implementation
+- **Jigyasa Saini** – Full pipeline design and notebook implementation  
