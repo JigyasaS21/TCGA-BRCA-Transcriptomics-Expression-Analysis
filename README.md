@@ -33,7 +33,7 @@ pip install pandas numpy seaborn matplotlib scikit-learn gseapy statsmodels
 ### Step 1 — Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/TCGA-BRCA-Transcriptomics-Expression-Analysis.git
+git clone https://github.com/JigyasaS21/TCGA-BRCA-Transcriptomics-Expression-Analysis.git
 cd TCGA-BRCA-Transcriptomics-Expression-Analysis
 ```
 ### Step 2 — Prepare the Data
